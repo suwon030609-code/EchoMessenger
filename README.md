@@ -6,8 +6,7 @@
 - 사용한 플랫폼:
 - C#, .NET Windows Forms, Visual Studio, GitHub
 
-- 사용한 컨트롤:
-- Label, TextBox, ListBox, Button
+- 사용한 컨트롤: Label, TextBox, ListBox, Button
 
 - 사용한 기술과 구현한 기능:
 - Visual Studio를 이용하여 Windows Forms UI를 설계하였습니다.
