@@ -73,6 +73,8 @@
             txtMessage.Name = "txtMessage";
             txtMessage.Size = new Size(900, 65);
             txtMessage.TabIndex = 3;
+            txtMessage.TextChanged += txtMessage_TextChanged;
+            txtMessage.KeyDown += txtMessage_KeyDown_1;
             // 
             // Form1
             // 
