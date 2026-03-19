@@ -13,6 +13,23 @@ namespace EchoMessenger
             lblCount.Text = $"현재 대화: {lstChat.Items.Count}개";
         }
 
+        private void DeleteSelectedMessage()
+        {
+            if (lstChat.SelectedIndex == -1)
+            {
+                MessageBox.Show("삭제할 메시지를 먼저 선택하세요.");
+                return;
+            }
+
+            lstChat.Items.RemoveAt(lstChat.SelectedIndex);
+            UpdateMessageCount();
+        }
+        private void ClearAllMessages()
+        {
+            lstChat.Items.Clear();
+            UpdateMessageCount();
+        }
+
 
         private void SendMessage()
         {
@@ -21,6 +38,13 @@ namespace EchoMessenger
             if (string.IsNullOrWhiteSpace(typedMsg))
             {
                 txtMessage.Clear();
+                txtMessage.Focus();
+                return;
+            }
+
+            if (typedMsg.Length > 50)
+            {
+                MessageBox.Show("메시지는 50자 이하로 입력하세요.");
                 txtMessage.Focus();
                 return;
             }
@@ -63,6 +87,15 @@ namespace EchoMessenger
                 e.SuppressKeyPress = true;
             }
         }
-       
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteSelectedMessage();
+        }
+
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            ClearAllMessages();
+        }
     }
 }
